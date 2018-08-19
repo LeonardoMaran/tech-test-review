@@ -1,13 +1,6 @@
 const ArticleList = require('../javascripts/models/ArticleList');
 
-class ArticleMock {
-  constructor(){}
-
-  view(){
-    return "view was called"
-  }
-
-}
+const ArticleMock = require('./__mocks__/ArticleMock.js')
 
 describe('ArticleList', () => {
   const data = {
