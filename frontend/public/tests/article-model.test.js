@@ -1,4 +1,4 @@
-const Article = require('../javascripts/article-model');
+const Article = require('../javascripts/Article-model');
 
 describe('Article', () => {
   const data = {
@@ -14,21 +14,33 @@ describe('Article', () => {
   }
   const index = 0
 
-  const article = new Article(data, index)
+  const article = new Article()
 
-  it('stores a title', () => {
+  it('stores state', () => {
+    article.setState(data,index)
+    expect(article.state).toEqual(
+      {
+        title: "Test title",
+        subheading: "Test subheading",
+        excerpt: "Test excerpt",
+        index: 0
+      }
+    )
+  })
+
+  it('returns a title', () => {
     expect(article.view().title).toEqual("Test title")
   })
 
-  it('stores a subheading', () => {
+  it('returns a subheading', () => {
     expect(article.view().subheading).toEqual("Test subheading")
   })
 
-  it('stores a excerpt', () => {
+  it('returns a excerpt', () => {
     expect(article.view().excerpt).toEqual("Test excerpt")
   })
 
-  it('stores an index', () => {
+  it('returns an index', () => {
     expect(article.view().index).toEqual(0)
   })
 
