@@ -1,4 +1,4 @@
-const Article = require('../javascripts/Article-model');
+const Article = require('../javascripts/models/Article');
 
 describe('Article', () => {
   const data = {
@@ -14,10 +14,9 @@ describe('Article', () => {
   }
   const index = 0
 
-  const article = new Article()
+  const article = new Article(data, index)
 
   it('stores state', () => {
-    article.setState(data,index)
     expect(article.state).toEqual(
       {
         title: "Test title",
