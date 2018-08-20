@@ -17,4 +17,6 @@ class ArticleListView {
   };
 }
 
-module.exports = ArticleListView;
+if (typeof module !== 'undefined') {
+  module.exports = ArticleListView;
+};

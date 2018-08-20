@@ -1,12 +1,16 @@
+// constructor(data, ArticleList = ArticleList, ArticleListView = ArticleListView)
+
 class ArticleListController {
-  constructor(data, ArticleList = ArticleList, ArticleListView = ArticleListView) {
+  constructor(data) {
     this.state = {
       articleList: new ArticleList(data),
       articleListView: new ArticleListView
     }
   }
 
-  render(document = document){
+  // render(document = document){
+
+  render(){
     this.state.articleList.createList();
     let listHTML = this.state.articleListView.format(this.state.articleList.viewList())
     let title = document.getElementById('title');
@@ -16,4 +20,6 @@ class ArticleListController {
   inputHTML(){}
 }
 
-module.exports = ArticleListController;
+if (typeof module !== 'undefined') {
+  module.exports = ArticleListController;
+};

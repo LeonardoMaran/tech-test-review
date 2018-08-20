@@ -13,4 +13,6 @@ class Article {
   };
 }
 
-module.exports = Article;
+if (typeof module !== 'undefined') {
+  module.exports = Article;
+};

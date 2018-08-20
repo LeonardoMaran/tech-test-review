@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     response.json()
-    .then(data => {console.log(data);});
+    .then(data => {
+      console.log(data);
+      let articleListController = new ArticleListController(data);
+      articleListController.render();
+    });
   })
   .catch(err => console.log(err))
 

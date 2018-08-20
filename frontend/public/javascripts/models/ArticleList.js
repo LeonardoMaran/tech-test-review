@@ -6,7 +6,9 @@ class ArticleList {
     }
   }
 
-  createList(Article = Article){
+  // createList(Article = Article){
+
+  createList(){
     for (var i = 0; i < 5; i++) {
       let article = new Article(this.state.data.results[0].results[i]);
       this.state.articles.push(article.view())
@@ -18,4 +20,6 @@ class ArticleList {
   }
 }
 
-module.exports = ArticleList;
+if (typeof module !== 'undefined') {
+  module.exports = ArticleList;
+};
