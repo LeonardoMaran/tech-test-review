@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     response.json()
     .then(data => {
       const articleListController = new ArticleListController(data);
-      articleListController.render();
+      articleListController.render(document);
     });
   })
   .catch(err => console.log(err))
@@ -47,7 +47,7 @@ function submit() {
     response.json()
     .then(data => {
       const articleListController = new ArticleListController(data);
-      articleListController.render();
+      articleListController.render(document);
     });
   })
   .catch(err => console.log(err))

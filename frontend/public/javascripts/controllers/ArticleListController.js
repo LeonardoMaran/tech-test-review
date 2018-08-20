@@ -1,16 +1,16 @@
-// constructor(data, ArticleList = ArticleList, ArticleListView = ArticleListView)
-
 class ArticleListController {
-  constructor(data) {
+  constructor(data, articleList = new ArticleList, articleListView = new ArticleListView) {
     this.state = {
-      articleList: new ArticleList(data),
-      articleListView: new ArticleListView
+      data: data,
+      articleList: articleList,
+      articleListView: articleListView
     }
   }
 
   // render(document = document){
 
-  render(){
+  render(document){
+    this.state.articleList.setState(this.state.data)
     this.state.articleList.createList();
     let listHTML = this.state.articleListView.format(this.state.articleList.viewList())
     let title = document.getElementById('title');

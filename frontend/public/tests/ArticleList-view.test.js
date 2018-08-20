@@ -16,7 +16,7 @@ describe('ArticleListView', () => {
 
   it('Turns a list into an HTML format', () => {
     const articleListView = new ArticleListView
-    expect(articleListView.format(articleList)).toEqual('<ul><li>test one title</li><li>test one subheading</li><li>test one excerpt</li><li>test two title</li><li>test two subheading</li><li>test two excerpt</li><li>test three title</li><li>test three subheading</li><li>test three excerpt</li></ul>')
+    expect(articleListView.format(articleList)).toEqual("<div class=\"o-grid-row\"><div data-o-grid-colspan=undefined><h4>test one title</h4><h6>test one subheading</h6><p>test one excerpt</p></div><div data-o-grid-colspan=undefined><h4>test two title</h4><h6>test two subheading</h6><p>test two excerpt</p></div><div data-o-grid-colspan=undefined><h4>test three title</h4><h6>test three subheading</h6><p>test three excerpt</p></div></div>")
   })
 
 });

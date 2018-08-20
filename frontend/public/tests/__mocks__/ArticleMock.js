@@ -1,5 +1,5 @@
 class ArticleMock {
-  constructor(){}
+  setState(){}
 
   view(){
     return "view was called"

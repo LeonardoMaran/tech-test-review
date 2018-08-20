@@ -14,9 +14,10 @@ describe('Article', () => {
   }
   const index = 0
 
-  const article = new Article(data, index)
+  const article = new Article()
 
   it('stores state', () => {
+    article.setState(data, index)
     expect(article.state).toEqual(
       {
         title: "Test title",

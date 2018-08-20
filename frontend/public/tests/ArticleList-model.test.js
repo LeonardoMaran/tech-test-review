@@ -12,9 +12,12 @@ describe('ArticleList', () => {
   }
 
   it('creates a new article list', () => {
-    articleList = new ArticleList(data)
-    articleList.createList(ArticleMock)
+    articleList = new ArticleList
+    articleList.setState(data)
+    articleMock = new ArticleMock
+    articleList.createList(articleMock)
     expect(articleList.state.articles).toEqual([
+      'view was called',
       'view was called',
       'view was called',
       'view was called',
@@ -24,7 +27,8 @@ describe('ArticleList', () => {
   })
 
   it('returns a new article list', () => {
-    articleList = new ArticleList(data)
+    articleList = new ArticleList()
+    articleList.setState()
     articleList.state.articles = ['new list']
     expect(articleList.viewList()).toEqual(['new list'])
   })

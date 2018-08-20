@@ -3,7 +3,7 @@ const ArticleListController = require('../javascripts/controllers/ArticleListCon
 // clearly all these mocks need to be refactored into the mock file.
 
 class ArticleListMock {
-  constructor() {
+  setState() {
     this.createListCalled = 0
   }
 
@@ -41,7 +41,7 @@ const data = {}
 
 describe('ArticleListController', () => {
 
-  let articleListController = new ArticleListController(data, ArticleListMock, ArticleListViewMock)
+  let articleListController = new ArticleListController(data, new ArticleListMock, new ArticleListViewMock)
 
 //I want to have some sort of beforeEach here
   articleListController.render(document);
