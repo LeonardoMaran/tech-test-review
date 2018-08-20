@@ -2,7 +2,7 @@
 
 An application that allows a user to view the latest headlines and search for headlines they are interested in.
 
-[Getting started](#getting-started)  | [My process](#my-process) | [Problems and solutions](#problems-and-solutions) | [What I would do next](#what-I-would-do-next)
+[Getting started](#getting-started)  | [Problems and solutions](#problems-and-solutions) | [What I would do next](#what-I-would-do-next)
 
 
 ## Getting started
