@@ -24,13 +24,13 @@ document.addEventListener("submit", function(event) {
 });
 
 function submit() {
-  const search = document.getElementById('search')
+  const search = document.getElementById('o-forms-standard')
 
   const searchrequest = 'http://localhost:3010/searchrequest';
 
   const data = {search: {} }
 
-  data.search = search.value
+  data.search = document.getElementById('search').value
 
   fetch(searchrequest, {
     method: 'POST',
