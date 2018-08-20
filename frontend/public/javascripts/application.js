@@ -52,3 +52,40 @@ document.addEventListener('DOMContentLoaded', function() {
   .catch(err => console.log(err))
 
 });
+
+document.addEventListener("submit", function(event) {
+  event.preventDefault();
+  submit();
+});
+
+function submit() {
+  var search = document.getElementById('search')
+  console.log(search.value);
+
+  let tryapost = 'http://localhost:3010/tryapost';
+
+  let data = {search: {} }
+
+  data.search = search.value
+
+  fetch(tryapost, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.status !== 200) {
+      console.log("We have a problem with articles: " + response.status);
+      return;
+    }
+    response.json()
+    .then(data => {
+      console.log(data);
+      let articleListController = new ArticleListController(data);
+      articleListController.render();
+    });
+  })
+  .catch(err => console.log(err))
+}

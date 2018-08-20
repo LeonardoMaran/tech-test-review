@@ -14,3 +14,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.listen(3000, function(){
   console.log('server started on port 3000...');
 })
+
+
+////how do I get to route to search?
