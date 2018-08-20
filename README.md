@@ -16,7 +16,6 @@ Open a browser and type ```localhost:3000```
 #### Running tests:
 
 * Navigate to the frontend directory ``` npm test ```
-* Navigate to the backend directory ``` npm test ```
 
 ## Problems and solutions
 
