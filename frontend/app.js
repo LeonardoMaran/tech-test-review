@@ -1,8 +1,9 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const PORT = 3000
 
-var app = express();
+const app = express();
 
 // Body Parser Middleware
 app.use(bodyParser.json());
@@ -11,9 +12,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 // Set Static Path
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.listen(3000, function(){
-  console.log('server started on port 3000...');
+app.listen(PORT, function(){
+  console.log(`server started on port ${PORT}!`);
 })
-
-
-////how do I get to route to search?
