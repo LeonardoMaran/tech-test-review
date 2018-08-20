@@ -7,8 +7,6 @@ class ArticleListController {
     }
   }
 
-  // render(document = document){
-
   render(document){
     this.state.articleList.setState(this.state.data)
     this.state.articleList.createList();
@@ -17,7 +15,6 @@ class ArticleListController {
     title.innerHTML = listHTML
   }
 
-  inputHTML(){}
 }
 
 if (typeof module !== 'undefined') {
