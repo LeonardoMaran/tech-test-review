@@ -9,8 +9,8 @@ class ArticleList {
   // createList(Article = Article){
 
   createList(){
-    for (var i = 0; i < 5; i++) {
-      let article = new Article(this.state.data.results[0].results[i]);
+    for (var i = 0; i < 6; i++) {
+      let article = new Article(this.state.data.results[0].results[i], i);
       this.state.articles.push(article.view())
     }
   }

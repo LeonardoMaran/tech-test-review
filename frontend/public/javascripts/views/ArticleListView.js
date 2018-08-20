@@ -1,18 +1,31 @@
 class ArticleListView {
+  constructor(){
+    this.state = {
+      0: "two-thirds",
+      1: "one-third",
+      2: "one-quarter",
+      3: "one-quarter",
+      4: "one-quarter",
+      5: "one-quarter"
+    }
+  }
 
   format(articleList){
-    var listHTML = `<ul>`
+    var self = this
+    var listHTML = `<div class="o-grid-row">`
     articleList.forEach(function(article) {
-      var HTML = `<li>${
+      var HTML = `<div data-o-grid-colspan=${
+        self.state[article.index]
+      }><h4>${
         article.title
-      }</li><li>${
+      }</h4><h6>${
         article.subheading
-      }</li><li>${
+      }</h6><p>${
         article.excerpt
-      }</li>`
+      }</p></div>`
       listHTML += HTML
     })
-    listHTML += `</ul>`
+    listHTML += `</div>`
     return listHTML
   };
 }
