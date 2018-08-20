@@ -20,42 +20,39 @@ Open a browser and type ```localhost:3000```
 
 ## Problems and solutions
 
-This task was a fantastic learning experience. Below I will highlight the major stumbling blocks I came across and how I overcame them/swerved them.
+This task was a fantastic learning experience. Below I will highlight the major stumbling blocks I came across and if/how I overcame them.
 
 #### Problem 1:
-It is not obvious that it is possible to set up a developer account with the FT if you are also an FT subscriber
-
-- After pursuing several other avenues I set up a separate email address and set up a separate account
-
-#### Problem 2:
 Making an API call from the browser results in a CORS error
 
 - I learnt about Cross Origin Resource Sharing and why this meant I had to create a back end that was served separately from my front end in order to make a successful API call to the FT API.
-- In doing this, I set up a full stack app that has an API call between the front end and the back end. I had to enable CORS for this API call to work.
+- In doing this, I set up a full stack app that has an API call between the front end and the back end. I had to enable CORS from the back end in order for this API call to work.
 
-#### Problem 3:
+#### Problem 2:
 Setting up express
 
-- I generally don't like to use ```generate```, especially for frameworks that I am not that familiar with as you end up with a lot of redundant code and it his hard to decipher what does what. I had used express before, but not that much.
-- However, I found the express docs somewhat unintuitive so the set up process was very time consuming. I do feel I have a better understanding of the inner workings of express as a result.  
+- I generally don't like to use ```generate``` or equivalent, especially for frameworks that I am not that familiar with as you end up with a lot of redundant code and it his hard to decipher what does what. I had used express before, but not that much.
+- I found the express docs somewhat unintuitive so the set up process was very time consuming. However, I do feel I have a better understanding of the inner workings of express as a result so this was a useful learning experience.  
 
-#### Problem 4:
+#### Problem 3:
 Having separate files for Model, View and Controller.
 
-It turns out that ```require``` cannot be run by a browser. This made my neatly encapsulated node modules a challenge to use. However, since I had TDD'd them using Jest, I needed the module.exports to run the tests.
+- It turns out that ```require``` cannot be run by a browser. This made my neatly encapsulated node modules a challenge to use. However, since I had TDD'd them using Jest, I needed the module.exports to run the tests.
 
-I tried to use ```browserify``` but this threw errors for my application.js as it said thad document was undefined in my event listener:  ```document.addEventListener('DOMContentLoaded'```
+- I tried to use ```browserify``` but this threw errors for my application.js as it said thad document was undefined in my event listener:  ```document.addEventListener('DOMContentLoaded'```
 
-I managed to get around module.exports through a nifty if function and added all of my docs as separate scripts to my index.html.
+- I managed to get around module.exports through a nifty if function and added all of my docs as separate scripts to my index.html so as to not use require.
 
-#### Problem 5:
+#### Problem 4:
 Injection for testing
 
-I struggled with the JEST mocking functionality. This lead me to build an entire suite of mocks in order to correctly stub behaviour. It also meant that I had to adjust my code design. I had to remove constructor functions and replace them with ```setState``` functions as jest would not let me pass in uninstantiated modules as arguments.
+- I struggled with the inbuilt JEST mocking functionality. This lead me to build an entire suite of mocks in order to correctly stub behaviour.
 
-I was unable to decipher how to test the API calls and document events in Jest. Though if I had time I would add some feature testing software which would help with this.
+- It also meant that I had to adjust my code design. I had to remove constructor functions and replace them with ```setState``` functions as jest would not let me pass in uninstantiated modules as arguments.
+
+- I was also unable to decipher how to test the API calls and DOM events in Jest.
 
 ## What I would do next
+- Further investigate how to test API calls and DOM events, and add feature tests.
 - Pagination: I would create a new object that could deal with 20 articles that would sit between ArticleList and Article classes
-- Add feature tests
 - Deploy on Heroku, this is something I have yet attempted
