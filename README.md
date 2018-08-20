@@ -38,7 +38,7 @@ Having separate files for Model, View and Controller.
 
 - It turns out that ```require``` cannot be run by a browser. This made my neatly encapsulated node modules a challenge to use. However, since I had TDD'd them using Jest, I needed the module.exports to run the tests.
 
-- I tried to use ```browserify``` but this threw errors for my application.js as it said thad document was undefined in my event listener:  ```document.addEventListener('DOMContentLoaded'```
+- I tried to use ```browserify``` but this threw a new error that my document was undefined in my event listener:  ```document.addEventListener('DOMContentLoaded'```
 
 - I managed to get around module.exports through a nifty if function and added all of my docs as separate scripts to my index.html so as to not use require.
 
