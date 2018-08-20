@@ -10,7 +10,7 @@ class ArticleList {
 
   createList(){
     for (var i = 0; i < 6; i++) {
-      let article = new Article(this.state.data.results[0].results[i], i);
+      const article = new Article(this.state.data.results[0].results[i], i);
       this.state.articles.push(article.view())
     }
   }

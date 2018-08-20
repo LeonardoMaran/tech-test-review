@@ -11,10 +11,10 @@ class ArticleListView {
   }
 
   format(articleList){
-    var self = this
-    var listHTML = `<div class="o-grid-row">`
+    const self = this
+    let listHTML = `<div class="o-grid-row">`
     articleList.forEach(function(article) {
-      var HTML = `<div data-o-grid-colspan=${
+      const HTML = `<div data-o-grid-colspan=${
         self.state[article.index]
       }><h4>${
         article.title
